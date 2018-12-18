@@ -1,0 +1,26 @@
+{
+  "name": "angular-chat",
+  "version": "1.0.0",
+  "description": "Chat Web with Angular2",
+  "main": "index.js",
+  "repository": "https://github.com/cyaaronk/angular-chat",
+  "author": "cyaaronk",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0"
+  },
+  "scripts": {
+    "start": "node dev.js && node index.js",
+    "dev": "node dev.js"
+  },
+  "devDependencies": {
+    "map-stream": "^0.0.7",
+    "pug": "^2.0.3",
+    "typescript": "^3.2.2",
+    "vinyl-fs": "^3.0.3",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
