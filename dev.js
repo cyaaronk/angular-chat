@@ -1,9 +1,13 @@
 #!/usr/bin/env node
 
 //require("typescript/bin/tsc");
-const child = require("child_process").execSync;
+const fs = require("fs");
 const path = require("path");
+const child = require("child_process").execSync;
 
+const walkSync = (d) => fs.statSync(d).isDirectory() ? fs.readdirSync(d).map((f) => walkSync(path.join(d, f))) && fs.rmdirSync(d) : fs.unlinkSync(d);
+walkSync(path.join(__dirname, "intermediates"));
+fs.mkdirSync(path.join(__dirname, "intermediates"));
 child("node " + path.join(__dirname, "/node_modules/typescript/bin/tsc"),
   (error, stdout, stderr) => {
     if (stdout) console.log(stdout);
