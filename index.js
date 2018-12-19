@@ -10,9 +10,13 @@ const server = http.createServer((req, res) => {
     console.log("index.html found！");
     fs.createReadStream(path.join(__dirname, "public", "index.html")).pipe(res);
   }
-  else if (req.url == "/bundle.js") {
-    console.log("bundle.js found！");
-    fs.createReadStream(path.join(__dirname, "public", "bundle.js")).pipe(res);
+  else if (req.url == "/polyfills.bundle.js") {
+    console.log("polyfills.bundle.js found！");
+    fs.createReadStream(path.join(__dirname, "public", "polyfills.bundle.js")).pipe(res);
+  }
+  else if (req.url == "/app.bundle.js") {
+    console.log("app.bundle.js found！");
+    fs.createReadStream(path.join(__dirname, "public", "app.bundle.js")).pipe(res);
   }
   else {
     res.writeHead(404);

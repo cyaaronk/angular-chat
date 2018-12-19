@@ -8,16 +8,26 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
+    "@angular/common": "^7.1.4",
+    "@angular/compiler": "^7.1.4",
+    "@angular/core": "^7.1.4",
+    "@angular/platform-browser": "^7.1.4",
+    "@angular/platform-browser-dynamic": "^7.1.4",
+    "core-js": "^2.6.1",
     "fs": "^0.0.1-security",
-    "http": "^0.0.0"
+    "http": "^0.0.0",
+    "rxjs": "^6.3.3",
+    "zone.js": "^0.8.26"
   },
   "scripts": {
     "start": "node dev.js && node index.js",
     "dev": "node dev.js"
   },
   "devDependencies": {
+    "angular2-template-loader": "^0.6.2",
     "map-stream": "^0.0.7",
     "pug": "^2.0.3",
+    "raw-loader": "^1.0.0",
     "typescript": "^3.2.2",
     "vinyl-fs": "^3.0.3",
     "webpack": "^4.27.1",
