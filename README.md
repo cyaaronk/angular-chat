@@ -3,8 +3,8 @@ An Angular 2 Chat App using node.js.
 
 ## Use popular frameworks
 
-l. Use Angular2, Socket.io, Webpack to develop Chat App.
-l. Use SASS and PUG to speed up development.
+1. Use Angular2, Socket.io, Webpack to develop Chat App.
+2. Use SASS and PUG to speed up development.
 
 ## Clean code
 
