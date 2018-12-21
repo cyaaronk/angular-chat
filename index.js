@@ -10,6 +10,10 @@ const server = http.createServer((req, res) => {
     console.log("index.html found！");
     fs.createReadStream(path.join(__dirname, "public", "index.html")).pipe(res);
   }
+  else if (req.url == "/index.css") {
+    console.log("index.css found！");
+    fs.createReadStream(path.join(__dirname, "public", "index.css")).pipe(res);
+  }
   else if (req.url == "/polyfills.bundle.js") {
     console.log("polyfills.bundle.js found！");
     fs.createReadStream(path.join(__dirname, "public", "polyfills.bundle.js")).pipe(res);
@@ -22,4 +26,17 @@ const server = http.createServer((req, res) => {
     res.writeHead(404);
     res.end();
   }
-}).listen(2043);
+});
+
+const io = require("socket.io")(server);
+
+io.on("connection", (socket) => {
+  console.log("a user connected to socket.io!");
+  socket.on("chat message", (msg) => {
+    console.log("a user sent a message to socket.io. Broadcast it to everyone: " + msg);
+    io.emit("chat message", msg);
+  });
+  socket.on("disconnect", () => console.log("a user disconnected from socket.io!"));
+});
+
+server.listen(2043);

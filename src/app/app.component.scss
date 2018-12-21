@@ -1,0 +1,60 @@
+#chatroom {
+    background-color: #242226;
+    padding-top: 5em;
+    font-family: "Raleway";
+}
+
+.title {
+    color: #d74f41;
+}
+
+.chatArea {
+    width: 90%;
+    margin: auto;
+}
+
+.msgBox {
+    display: block;
+    opacity: .4;
+
+    &:nth-child(1) {
+        opacity: 1;
+    }
+    &:nth-child(2) {
+        opacity: .8;
+    }
+    &:nth-child(3) {
+        opacity: .6;
+    }
+    a {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #816A98;
+        font-size: .8em;
+        letter-spacing: 2px;
+    }
+    p {
+        background: #323035;
+        padding: 1.1em;
+        color: white;
+    }
+}
+
+/*--------------------
+Message Input Box
+--------------------*/
+.inputBox {
+    display: block;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.1em;
+    margin-bottom: .8em;
+
+    & .msgInput {
+    background: none;
+    border: none;
+    outline: none!important;
+    color: rgba(255, 255, 255, .7);
+    font-size: .8em;
+    width: 100%;
+    }
+}

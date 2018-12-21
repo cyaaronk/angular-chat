@@ -1,0 +1,10 @@
+div#chatroom
+    div.chatArea
+      h1.title {{ title }}
+      div.inputBox
+        form('[formGroup]'="sendMessageForm" '(ngSubmit)'="onSubmit()")
+          input.msgInput(type="text" placeholder="Chat here..." formControlName="messageInputControl" autocomplete="off")
+      div
+        div.msgBox('*ngFor'="let message of messages")
+          a Anonymous
+          p {{ message }}
